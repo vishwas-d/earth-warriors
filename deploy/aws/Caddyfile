@@ -1,0 +1,8 @@
+# Set API_DOMAIN in the environment before starting Caddy (see deploy/aws/README.md).
+{$API_DOMAIN:localhost} {
+    encode gzip zstd
+    request_body {
+        max_size 26MB
+    }
+    reverse_proxy backend:8000
+}

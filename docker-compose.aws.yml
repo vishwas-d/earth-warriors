@@ -1,0 +1,64 @@
+# Production API on AWS EC2 (ap-southeast-1 Singapore). Frontend stays on Cloudflare Pages.
+# Usage: docker compose --env-file .env.aws -f docker-compose.aws.yml up -d --build
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile.backend
+    restart: unless-stopped
+    env_file:
+      - .env.aws
+    environment:
+      DJANGO_DEBUG: "0"
+      SEED_DEMO_DATA: "0"
+    volumes:
+      - backend_media:/app/media
+    command:
+      [
+        "gunicorn",
+        "config.wsgi:application",
+        "--bind",
+        "0.0.0.0:8000",
+        "--workers",
+        "${GUNICORN_WORKERS:-2}",
+        "--timeout",
+        "120",
+        "--access-logfile",
+        "-",
+        "--error-logfile",
+        "-",
+      ]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/health/', timeout=3)",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    env_file:
+      - .env.aws
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/aws/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  backend_media:
+  caddy_data:
+  caddy_config:

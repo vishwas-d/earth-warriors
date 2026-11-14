@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#0077c8",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fbfbff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d2e4ff",
+                    "on-primary-fixed-variant": "#00497e",
+                    "primary-fixed-dim": "#9fcaff",
+                    "on-tertiary-container": "#f8fdff",
+                    "outline": "#717783",
+                    "tertiary-fixed-dim": "#4cd6fb",
+                    "on-background": "#1b1b1b",
+                    "on-surface-variant": "#404751",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#0e5138",
+                    "secondary-fixed-dim": "#95d4b3",
+                    "tertiary": "#00647a",
+                    "surface-container-high": "#eae7e7",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary-container": "#316e52",
+                    "on-tertiary-fixed-variant": "#004e5f",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#001f27",
+                    "on-surface": "#1b1b1b",
+                    "surface-tint": "#0061a5",
+                    "surface-container": "#f0eded",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary-fixed": "#b1f0ce",
+                    "inverse-primary": "#9fcaff",
+                    "surface-variant": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fcf9f8",
+                    "tertiary-fixed": "#b3ebff",
+                    "surface": "#fcf9f8",
+                    "outline-variant": "#c0c7d3",
+                    "surface-dim": "#dcd9d9",
+                    "secondary": "#2c694e",
+                    "tertiary-container": "#007f99",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#aeeecb",
+                    "background": "#fcf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#313030",
+                    "on-primary-fixed": "#001d36",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#005e9f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "margin-x": "32px",
+                    "stack-md": "16px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "display-hero": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "section-label": ["Inter"],
+                    "data-point": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "display-hero": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "section-label": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "data-point": ["56px", {"lineHeight": "1.0", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+            color: #1b1b1b;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+<div class="flex justify-between items-center h-20 px-4 sm:px-8 max-w-[1600px] mx-auto gap-2">
+<div class="text-xl sm:text-2xl font-black text-[#0077C8] tracking-tighter whitespace-nowrap">Earth Warrior</div>
+<nav class="hidden xl:flex items-center gap-8">
+<a class="font-semibold tracking-tight text-[#0077C8] border-b-2 border-[#0077C8] pb-1" href="#">Home</a>
+<a class="font-semibold tracking-tight text-slate-600 hover:text-[#0077C8] transition-all duration-200" href="#">Blogs</a>
+<a class="font-semibold tracking-tight text-slate-600 hover:text-[#0077C8] transition-all duration-200" href="#">Research</a>
+<a class="font-semibold tracking-tight text-slate-600 hover:text-[#0077C8] transition-all duration-200" href="#">Ground Work</a>
+<a class="font-semibold tracking-tight text-slate-600 hover:text-[#0077C8] transition-all duration-200" href="#">Impact</a>
+<a class="font-semibold tracking-tight text-slate-600 hover:text-[#0077C8] transition-all duration-200" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-2 sm:gap-4">
+<button class="hidden lg:flex items-center gap-2 font-semibold text-slate-600 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<details class="relative xl:hidden">
+<summary class="list-none cursor-pointer rounded bg-slate-100 px-3 py-2.5 text-sm font-semibold text-slate-900">Menu</summary>
+<nav class="absolute right-0 top-full mt-2 min-w-48 rounded-lg border border-slate-200 bg-white p-2 shadow-lg">
+<a class="block rounded px-3 py-2 font-semibold text-[#0077C8]" href="#">Home</a>
+<a class="block rounded px-3 py-2 font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0077C8]" href="#">Blogs</a>
+<a class="block rounded px-3 py-2 font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0077C8]" href="#">Research</a>
+<a class="block rounded px-3 py-2 font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0077C8]" href="#">Ground Work</a>
+<a class="block rounded px-3 py-2 font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0077C8]" href="#">Impact</a>
+<a class="block rounded px-3 py-2 font-semibold text-slate-600 hover:bg-slate-50 hover:text-[#0077C8]" href="#">About Us</a>
+</nav>
+</details>
+<button class="hidden sm:inline-flex scale-95 active:opacity-80 transition-transform bg-slate-100 text-slate-900 px-3 sm:px-6 py-2.5 rounded font-semibold text-sm whitespace-nowrap">Join Us</button>
+<button class="scale-95 active:opacity-80 transition-transform bg-[#0077C8] text-white px-3 sm:px-6 py-2.5 rounded font-semibold text-sm whitespace-nowrap">Donate</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[36rem] md:h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-100" data-alt="A detailed illustration of the Yamuna River flowing through Delhi, showing the river and its tributaries." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPN5YVF5bkxER1ulGD9T2d6LtgGypL2ApY8mOE3Jr9PoPsBYrakv7jBAY4LkonpaAjzX6oElrw5ZtdCFuhSkLUX_D2nJwom52ulzOAGVgnxoTmWpWYn0fAQGbkgfa5CspbetjE6zlfwmuFX7iYlUyhR-bAk-gLSZ32LImyKwGb7XXDygK658iN4kxrwIcdB9itc2R1uw97AWVTYalVrMtrT-_oQIx-G2lXTyOzgUhTiyt_K9x511HZqWTt1EBtZdIHyR27H_JLOhaK=s2400" fetchpriority="high"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/70 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-8 w-full">
+<div class="max-w-2xl">
+<span class="font-section-label text-section-label text-secondary mb-6 block uppercase">Radical Transparency</span>
+<h1 class="font-display-hero text-4xl sm:text-5xl lg:text-display-hero font-extrabold mb-8 text-on-background uppercase">Urgent Action for the Yamuna.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        We are moving from passive observation to aggressive ground-level intervention. Witness the reality, track our progress, and join the mission to reclaim India's most vital waterway.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary font-bold px-8 py-4 rounded-lg flex items-center gap-2 hover:opacity-90 transition-all">
+                            CLEAN THE RIVER NOW
+                            <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+</button>
+<button class="border border-secondary text-secondary font-bold px-8 py-4 rounded-lg hover:bg-secondary/5 transition-all">
+                            OUR PROCESS
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- The Crisis of the Yamuna Section -->
+<section class="py-16 md:py-section-gap bg-surface">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8">
+<div class="mb-stack-lg">
+<span class="font-section-label text-section-label text-secondary uppercase mb-4 block">Environmental Emergency</span>
+<h2 class="font-headline-lg text-3xl md:text-headline-lg font-bold uppercase">The Crisis of the Yamuna</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mt-4">The river that sustains Delhi is dying. A lethal combination of toxic waste and neglect has pushed the Yamuna to a state of ecological collapse.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Industrial Effluent -->
+<div class="group overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant hover:border-primary transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Industrial pollution flowing into a river" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl0nBlf6Le4TtS1JPo6Zoa_D2zv-pzgzHlKk2tdV1Okxx99uMj4Ao7juuoFngAJCPRmTANvZ9vv8WSxPYGnfm07NSg1EkCUG_1Tc34xSdupavOlkOkURfzM_hyKu9rduccsihUmjO_4PZjg-PGosnp97cmayPqmnIM6iFPQbePViLtV6hB3_BXAu4ceCyKeyES9H2DFKzfsdjIuwd0CbuHmHHruLoKI0jsST4qVr9Q2h6Dvfa00T4CaEGHVC-agHqgIGaGVshRIuIu"/>
+<div class="absolute top-4 left-4 bg-error text-white px-3 py-1 rounded font-section-label text-[10px] uppercase tracking-widest">High Risk</div>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="plumbing">plumbing</span>
+<h3 class="font-headline-md text-[24px]">Untreated Sewage</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Thousands of millions of liters of domestic sewage enter the river daily, depleting oxygen levels and severely impacting the natural aquatic ecosystem.</p>
+</div>
+</div>
+<!-- Untreated Sewage -->
+<div class="group overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant hover:border-primary transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Sewage drain outlet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt45hG9-nR-Ey3kKxpP90EnsUWA79vR7LumyTfTam6fVri75cEnoXVpg-URJfIqRB3d6yUFLti8oeaHHK_pmdmXV8gWyqa_H0HHEXkMcww5QCIxmQIxucX4bi6ANC0AQliWQSk1e8QZqTlWHLoxSFV55moU9PtRd0C4SXHaoQi4-YjSIzHiQA-LpQptK33uxfd-OkxzHfMS_YnrMsLSjb00zcFSe60-BX5fDWafNVOr1r9WjvlbhAOYz-jcJJK-2KeYg8sl71L9_ZI"/>
+<div class="absolute top-4 left-4 bg-error text-white px-3 py-1 rounded font-section-label text-[10px] uppercase tracking-widest">Critical</div>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="settings_suggest">settings_suggest</span>
+<h3 class="font-headline-md text-[24px]">STPs &amp; CETPs Failure</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Inadequate and poorly maintained treatment infrastructure fails to filter out heavy metals and chemical toxins before they are discharged into the stream.</p>
+</div>
+</div>
+<!-- Plastic Waste -->
+<div class="group overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant hover:border-primary transition-all duration-300">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Plastic waste in water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcv8umnoBlWV9cDMOQwkX4VxDEvAqeY_iOhsIKvuBIvhJ8IKG0qIFPxqdDqZsfpt4llGWVJkJXSV6jlH-y7ALKuUSzRpqRlcmqgIZVzErHO2HqIaJKZhPhj27h49sGP4cRL9_0L1EcHwcYz57h3R-cfkD2ZmsaentuwBYXbTN69H4obtnxtTV1PUzUNCwE-RNlJVucS_0lvAhiFZP_eNTfvQAiuZAhvU25K6Ng8yJYNnHTmk0PIqEhOC93ugdedC3VZldpaCkRzVT2"/>
+<div class="absolute top-4 left-4 bg-error text-white px-3 py-1 rounded font-section-label text-[10px] uppercase tracking-widest">Toxic</div>
+</div>
+<div class="p-stack-md">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="delete_sweep">delete_sweep</span>
+<h3 class="font-headline-md text-[24px]">Solid Waste</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Massive amounts of plastic debris and solid waste choke the riverbed, preventing natural filtration and poisoning the entire river ecology.</p>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg pt-stack-md border-t border-outline-variant flex justify-center"><button class="flex items-center gap-3 px-10 py-5 border-2 border-primary text-primary font-semibold text-lg rounded-full group hover:bg-primary hover:text-white transition-all duration-300">
+        READ THE FULL POLLUTION AUDIT
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button></div>
+</div>
+</section>
+<!-- Impact Section (Stats) -->
+<section class="py-16 md:py-section-gap bg-surface-container-lowest border-y border-slate-200">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8">
+<div class="grid grid-cols-1 gap-12 md:grid-cols-4">
+<div class="space-y-4">
+<span class="font-section-label text-section-label text-outline uppercase">Waste Removed</span>
+<div class="font-data-point text-data-point text-primary">14,000<span class="text-headline-md ml-2">Kgs</span></div>
+<div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]" style="width: 21.5%;"></div>
+</div>
+<div class="flex justify-between font-caption text-caption text-slate-500"><span class="">Current Progress</span><span class=""><br/></span></div>
+</div>
+<div class="space-y-4">
+<span class="font-section-label text-section-label text-outline uppercase">Cleaning Drives Organized</span>
+<div class="font-data-point text-data-point text-secondary">300+</div>
+<p class="font-body-md text-body-md text-slate-600">Weekly cleanup operations conducted by our dedicated volunteers.</p>
+</div>
+<div class="space-y-4">
+<span class="font-section-label text-section-label text-outline uppercase">Letters to Authorities</span>
+<div class="font-data-point text-data-point text-tertiary">50+</div>
+<p class="font-body-md text-body-md text-slate-600">Raising concerns and demanding accountability from state officials.</p>
+</div><div class="space-y-4">
+<span class="font-section-label text-section-label text-outline uppercase">States Covered</span>
+<div class="font-data-point text-data-point text-on-background">5+</div>
+<p class="font-body-md text-body-md text-slate-600">Environmental action expanding across key regions in the river basin.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Ground Work (Bento Grid) -->
+<section class="py-16 md:py-section-gap">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8">
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<span class="font-section-label text-section-label text-secondary uppercase mb-4 block">Field Operations</span>
+<h2 class="font-headline-lg text-3xl md:text-headline-lg font-bold uppercase">Ground Work</h2>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 group"><span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-12 gap-gutter md:h-[600px]">
+<div class="col-span-12 md:col-span-8 min-h-[24rem] relative overflow-hidden rounded-xl bg-slate-900 group">
+<div class="absolute inset-0 group-hover:bg-black/20 transition-all duration-500 z-10 bg-black/50"></div>
+<div class="absolute top-6 left-6 z-20 bg-white px-4 py-1 rounded-full font-section-label text-section-label text-slate-900">SITE: KALINDI KUNJ GHAT</div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Earth Warrior volunteers wearing gloves and protective gear cleaning up heavy waste and debris from the polluted banks of the Yamuna river." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYSMNWDWCsLrniyjgCuUONxbKhSOoCLIcX8MLMPgazfylOH0HqDvMy-USRk3R64zyDHLoz_YsA7lWHRcvWNOPKrLXqdUgLDFkiVlX20wxxH8SDj1oPF95lW46jHPEL9673wQGOf2yWjf3IfY332qJlfh8LKX2NfpEjkaLpxmJaE2VDr7DofvrNvFZEPcDgMqcGbJUvUA54FJTnPv5ASTVLvkFYvHP8cZAeTqULRQYchbVb3f8ApLKHqAKGR3hTQ26uSTiRBLeG12Ck"/>
+<div class="absolute bottom-8 left-8 z-20 text-white">
+<div class="font-headline-md text-headline-md mb-2">Massive Debris Extraction</div>
+<p class="font-body-md text-body-md text-slate-200">Weekly removal of industrial waste using heavy hydraulic machinery.</p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 grid grid-rows-2 gap-gutter min-h-[500px] md:min-h-0">
+<div class="relative overflow-hidden p-stack-lg rounded-xl flex flex-col justify-between border border-slate-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] bg-[#c7e9ff] group">
+<img class="absolute inset-0 w-full h-full object-contain opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="Citizen's Water Testing Laboratory Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYlg1vSu1fpfPuEs6qD8LJnE-JwW4s6wVzxM0PyFA3sAlYZj6qwHTqVV-S-5Buken4UJrWThb6ey5sMotozEjyCQgDVuspJtf74QA94Db42ExjOcEhQ8tdyDp7ScbGLO3OVlM6fAkWakFr1Zg5dHr5xlQvbKSIKMK5fJql8pE_5e8_Msc40seJ36i2wnuiQUTC3bq5HPUvvi83strqQhQKnTU44J-LPzKGZ5VBSTxwhV2UTn8irYrqrlR-q9sJDWMEySlYeqqmZElk"/>
+<div class="relative z-10">
+<span class="font-section-label text-section-label text-primary uppercase">Water Testing LAB</span>
+<h3 class="font-headline-md text-headline-md mt-4 text-slate-900 backdrop-blur-sm bg-white/10 p-1 rounded">Real-time drinking water analysis</h3>
+</div>
+<div class="relative z-10 flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="biotech">biotech</span>
+</div>
+<span class="font-body-md text-body-md text-slate-800 font-medium">NABL accredited free of cost public laboratory</span>
+</div>
+</div>
+<div class="bg-secondary-container p-stack-lg rounded-xl flex flex-col justify-between border border-secondary/10 relative overflow-hidden">
+<img alt="Tree illustration background" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none" src="https://lh3.googleusercontent.com/aida/ADBb0uglEBBZVckzJIFUUdqYXgWcmHjM9LckawAAspc3UZB0Ow8Bm6ejjWl4zTi9mDNnrawATqCy6ixBBqPFbZfZK4NLFnmHa9_4SmprodJDE1Ulw-fB7a2_TXunpoFR1GM2ZKu_GA6T1uuqdgjaWhfXFUp5-iVz67gZ5m6ts4B_7NnpAQMECkpZYp5oBGoGTPhGQb-xF2v7yt_fwJz9hCHst5Ii5w_mpRe7jLPmhm0T-VWxrC5HKwumQ50bexmO"/>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<span class="font-section-label text-section-label text-on-secondary-container uppercase">Government reports</span>
+<h3 class="font-headline-md text-headline-md mt-4 text-on-secondary-container uppercase">ANALYSIS</h3>
+</div>
+<button class="bg-on-secondary-container text-white w-fit px-6 py-2 rounded-full font-semibold text-sm mt-auto">Curious? Watch now.</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest from Blogs (High Density) -->
+<section class="py-16 md:py-section-gap bg-slate-50">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8">
+<div class="flex justify-between items-center mb-stack-lg border-b border-slate-200 pb-stack-md">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg font-bold tracking-tight uppercase">Latest Reports</h2>
+<a class="text-primary font-bold hover:underline" href="#">View All Research</a>
+</div>
+<div class="space-y-0">
+<article class="py-10 border-b border-slate-200 grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+<div class="md:col-span-2 font-section-label text-section-label text-slate-400">OCT 24, 2024</div>
+<div class="md:col-span-6">
+<h3 class="font-headline-md text-2xl md:text-headline-md font-bold mb-4 group-hover:text-primary transition-colors">Major discrepancies found in the Mar/April-26 reports of DJB</h3>
+<p class="font-body-md text-body-md text-slate-600">A detailed analysis of how plastic particles are altering the microbial health of the Yamuna's floodplains and the long-term risks to local agriculture.</p>
+</div>
+<div class="md:col-span-4 flex justify-end">
+<a class="flex items-center gap-2 font-bold text-primary" href="#">
+                                READ REPORT <span class="material-symbols-outlined" data-icon="north_east">north_east</span>
+</a>
+</div>
+</article>
+<article class="py-10 border-b border-slate-200 grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+<div class="md:col-span-2 font-section-label text-section-label text-slate-400">OCT 18, 2024</div>
+<div class="md:col-span-6">
+<h3 class="font-headline-md text-2xl md:text-headline-md font-bold mb-4 group-hover:text-primary transition-colors">Froth found in the Wazirabad upstream</h3>
+<p class="font-body-md text-body-md text-slate-600">Our ground teams identified 42 unregistered discharge pipes. Here is the photographic evidence and our formal submission to the board.</p>
+</div>
+<div class="md:col-span-4 flex justify-end">
+<a class="flex items-center gap-2 font-bold text-primary" href="#">
+                                READ REPORT <span class="material-symbols-outlined" data-icon="north_east">north_east</span>
+</a>
+</div>
+</article>
+<article class="py-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-start group">
+<div class="md:col-span-2 font-section-label text-section-label text-slate-400">OCT 12, 2024</div>
+<div class="md:col-span-6">
+<h3 class="font-headline-md text-2xl md:text-headline-md font-bold mb-4 group-hover:text-primary transition-colors">Anionic Surfactant found in Yamuna river - questions on DJB report asked</h3>
+<p class="font-body-md text-body-md text-slate-600">How 500 local volunteers removed 4 tons of solid waste in a single weekend, restoring critical nesting grounds for migratory species.</p>
+</div>
+<div class="md:col-span-4 flex justify-end">
+<a class="flex items-center gap-2 font-bold text-primary" href="#">
+                                READ REPORT <span class="material-symbols-outlined" data-icon="north_east">north_east</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Institutional CTA -->
+<section class="relative py-16 md:py-section-gap overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF4rB271qnME7dVcHN3yuKHoTOz33SkBbINyp-V8oSHy1m80jkvJUCIPGgFLuI5GsRQD99LkrbK3GCKyWXwcIEvgU5dFJVJsJsiMm1FLj4k6jU_a4w4RMKc7rJRCgTkFA_eA7bhf7YJuM0JmJ2vLGujoYQBn0DwMNby5HfYnSZ3mepRk81yUjpxQL8hQvvDvXIC1YiEqQF-jcUhOVzrnQQvDiyX5TnmHVyntjozbLgrXnUE_PMb0OMwSTjaSuzn2M0ZVdVz5E8ThHY"/>
+<div class="absolute inset-0 bg-primary/90"></div>
+<div class="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-8 text-center text-on-primary">
+<h2 class="font-display-hero text-3xl md:text-headline-lg font-extrabold mb-8 max-w-3xl mx-auto uppercase">THE RIVER RECLAIMS ITS LIFE THROUGH YOUR HANDS.</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-10 max-w-2xl mx-auto">Join us every Sunday at 6:30 AM at Kalindi Kunj Ghat, Delhi. Your participation is the heartbeat of our mission to restore the Yamuna.</p>
+<div class="flex flex-col items-center gap-8 w-full max-w-4xl mx-auto">
+<div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl w-full flex flex-col md:flex-row items-center gap-8 text-left">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-fixed text-3xl">location_on</span>
+<h3 class="text-2xl font-bold">Kalindi Kunj Ghat</h3>
+</div>
+<p class="text-primary-fixed mb-6">near Kalindi Kunj metro station, New Delhi. Meet us at the main entry point near the bridge at 6:30 AM sharp.</p>
+<a class="inline-flex items-center gap-2 bg-white text-primary px-4 sm:px-8 py-4 rounded-lg font-bold hover:bg-slate-100 transition-all shadow-lg" href="https://maps.app.goo.gl/5CYGvjHyMDdw1GJZ6?g_st=aw" target="_blank">
+        OPEN IN GOOGLE MAPS
+        <span class="material-symbols-outlined">map</span>
+</a>
+</div>
+<div class="w-full md:w-64 h-48 rounded-xl bg-white/20 flex items-center justify-center relative overflow-hidden group border border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF4rB271qnME7dVcHN3yuKHoTOz33SkBbINyp-V8oSHy1m80jkvJUCIPGgFLuI5GsRQD99LkrbK3GCKyWXwcIEvgU5dFJVJsJsiMm1FLj4k6jU_a4w4RMKc7rJRCgTkFA_eA7bhf7YJuM0JmJ2vLGujoYQBn0DwMNby5HfYnSZ3mepRk81yUjpxQL8hQvvDvXIC1YiEqQF-jcUhOVzrnQQvDiyX5TnmHVyntjozbLgrXnUE_PMb0OMwSTjaSuzn2M0ZVdVz5E8ThHY"/>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-2">explore</span>
+<span class="text-xs font-bold tracking-widest uppercase">View Site Area</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 w-full py-12">
+<div class="max-w-[1600px] mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<div class="text-lg font-bold text-slate-900 dark:text-white mb-4">Earth Warrior</div>
+<p class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 max-w-sm mb-6">
+                    Radical Transparency for the Yamuna. We are an NGO dedicated to scientific intervention and field-level cleanup operations.
+                </p>
+<div class="text-sm text-slate-500 dark:text-slate-400">
+                    © 2024 Earth Warrior NGO. Radical Transparency for the Yamuna.
+                </div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-3">
+<span class="font-semibold text-slate-900">Legal</span>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-[#0077C8] hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-[#0077C8] hover:underline transition-all" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-semibold text-slate-900">Reports</span>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-[#0077C8] hover:underline transition-all" href="#">Annual Reports</a>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-[#0077C8] hover:underline transition-all" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-semibold text-slate-900">Company</span>
+<a class="font-['Inter'] text-sm text-slate-500 hover:text-[#0077C8] hover:underline transition-all" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
