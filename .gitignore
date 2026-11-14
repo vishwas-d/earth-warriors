@@ -1,6 +1,7 @@
 .env
 .env.*
 !.env.example
+!deploy/aws/.env.aws.example
 
 node_modules/
 dist/
